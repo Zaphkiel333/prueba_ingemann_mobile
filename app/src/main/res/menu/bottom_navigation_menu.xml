@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/createInvoiceFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Crear Factura"/>
+
+    <item
+        android:id="@+id/viewInvoicesFragment"
+        android:icon="@android:drawable/star_on"
+        android:title="Ver Facturas"/>
+</menu>
