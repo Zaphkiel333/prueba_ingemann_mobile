@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 
 import com.example.ingemann.Fragments.CreateInvoiceFragment;
 import com.example.ingemann.Fragments.ViewInvoicesFragment;
@@ -14,8 +15,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CreateInvoiceFragment createInvoiceFragment = new CreateInvoiceFragment();
-    ViewInvoicesFragment viewInvoicesFragment = new ViewInvoicesFragment();
+    private CreateInvoiceFragment createInvoiceFragment = new CreateInvoiceFragment();
+    private ViewInvoicesFragment viewInvoicesFragment = new ViewInvoicesFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

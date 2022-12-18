@@ -3,47 +3,35 @@ package com.example.ingemann.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
+import com.example.ingemann.Adapters.InvoiceAdapter;
+import com.example.ingemann.Models.Invoice;
 import com.example.ingemann.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ViewInvoicesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class ViewInvoicesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    RecyclerView recyclerInvoice;
+    InvoiceAdapter adapter;
 
     public ViewInvoicesFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ViewInvoicesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ViewInvoicesFragment newInstance(String param1, String param2) {
         ViewInvoicesFragment fragment = new ViewInvoicesFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,16 +39,31 @@ public class ViewInvoicesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_invoices, container, false);
+        View root = inflater.inflate(R.layout.fragment_view_invoices, container, false);
+
+        recyclerInvoice = root.findViewById(R.id.recyclerViewInvoices);
+        recyclerInvoice.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        List<Invoice> invoices = new ArrayList<>();
+
+        invoices.add(new Invoice(1,"code",new Date(2022,10,10),"Rafael", 56));
+        invoices.add(new Invoice(24,"code2", new Date(2022,10,12),"Yanna",79));
+
+        adapter =  new InvoiceAdapter(invoices, new InvoiceAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Invoice invoice, int position) {
+                Toast.makeText(getContext(),invoices.get(position).getId(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        recyclerInvoice.setAdapter(adapter);
+
+        return root;
     }
 }
