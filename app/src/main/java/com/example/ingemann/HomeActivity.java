@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.AdapterView;
 
 import com.example.ingemann.Fragments.CreateInvoiceFragment;
 import com.example.ingemann.Fragments.ViewInvoicesFragment;

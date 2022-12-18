@@ -3,12 +3,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ViewInvoicesFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="#E0E0E0"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:text="CLIENTE"
+                android:textStyle="bold"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:textColor="#505456"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="FACTURA"
+                android:textStyle="bold"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="#505456"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="FECHA"
+                android:textStyle="bold"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="#505456"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="MONTO"
+                android:textStyle="bold"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="#505456"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewInvoices"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"/>
 
 </FrameLayout>

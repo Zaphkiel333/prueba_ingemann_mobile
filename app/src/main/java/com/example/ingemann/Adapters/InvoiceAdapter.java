@@ -3,7 +3,6 @@ package com.example.ingemann.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -55,7 +54,7 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.InvoiceV
         public void bind(final Invoice invoice, final OnItemClickListener listener){
             txtInvoice.setText(invoice.getCodigo());
             txtDate.setText(invoice.getFecha());
-            txtClient.setText(invoice.getNombreCliente());
+            txtClient.setText(invoice.getCliente());
             txtMount.setText(invoice.getTotal());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
