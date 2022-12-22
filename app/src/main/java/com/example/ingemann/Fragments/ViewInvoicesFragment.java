@@ -28,10 +28,10 @@ import retrofit2.Response;
 
 public class ViewInvoicesFragment extends Fragment {
 
-    RecyclerView recyclerInvoice;
-    InvoiceAdapter adapter;
+    private RecyclerView recyclerInvoice;
+    private InvoiceAdapter adapter;
 
-    List<Invoice> invoices;
+    private List<Invoice> invoices;
 
     public ViewInvoicesFragment() {
     }

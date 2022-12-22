@@ -9,7 +9,7 @@ public class MyApiAdapter {
 
     private static MyApiService API_SERVICE;
 
-    private static final String BASE_URL = "http://192.168.1.3:5000/api/";
+    private static final String BASE_URL = "http://192.168.1.12:5000/api/";
 
     public static MyApiService getApiService(){
         final HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
